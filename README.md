@@ -8,7 +8,7 @@ If you wish to work with this, to test this out, and possibly add new content, s
 jrc8b8@umsystem.edu
 
 
-##Game Synopsis:
+#Game Synopsis:
 
 This game is a sidescroller adventure.
 
