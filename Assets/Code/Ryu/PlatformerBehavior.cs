@@ -45,6 +45,15 @@ public class PlatformerBehavior : MonoBehaviour
     public float fastFallAdder = 1;
 
 
+    [Header("Crouch")]
+
+    public float crouchColliderOffset;
+    public float crouchColliderScale;
+
+    float crouchOriginalOffset;
+    float crouchOriginalScale;
+
+  
 
 
 
@@ -147,6 +156,12 @@ public class PlatformerBehavior : MonoBehaviour
         busy = false;
 
         dead = false;
+
+
+        //Initialize Crouch Details:
+
+        
+
     }
 
     void Update()
@@ -160,11 +175,10 @@ public class PlatformerBehavior : MonoBehaviour
 
         checkToEndHurt();
 
-        if(dead == true && isGrounded)
+        if(dead == true)
         {
-            rb.velocity = new Vector2(rb.velocity.x,rb.velocity.y-fastFallAdder);
+            DeathTrajectory();
         }
-       
     }
 
     void FixedUpdate()
@@ -442,6 +456,14 @@ public class PlatformerBehavior : MonoBehaviour
 
 
 
+    }
+
+    void DeathTrajectory()
+    {
+        if(isGrounded == true)
+        {
+            rb.velocity = new Vector2(0,0);
+        }
     }
 
 }

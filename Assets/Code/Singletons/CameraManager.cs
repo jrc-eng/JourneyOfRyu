@@ -8,7 +8,7 @@ public class CameraManager : MonoBehaviour
 {
     public static CameraManager sharedInstance = null;
 
-    [HideInInspector]
+    
     public CinemachineVirtualCamera virtualCamera;
 
 
